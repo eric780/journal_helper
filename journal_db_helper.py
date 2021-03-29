@@ -11,6 +11,8 @@ CREATE TABLE IF NOT EXISTS {table_name} (
 );
 """.format(table_name=JOURNAL_TABLE_NAME)
 
+SQL_GET_RANDOM_ENTRY = "SELECT * FROM {table_name} ORDER BY RANDOM() LIMIT 1".format(table_name=JOURNAL_TABLE_NAME)
+
 DEBUG = False
 
 # creates and returns a sql connection. you must call close() on this when finished
@@ -55,6 +57,12 @@ def getEntryFromDb(sql, date: str):
         return None
     else:
         return entries[0]
+
+def getRandomEntryFromDb(sql):
+    cursor = sql.cursor()
+    cursor.execute(SQL_GET_RANDOM_ENTRY)
+    entries = cursor.fetchall()
+    return entries[0]
 
 def clearAllSqlEntries():
 	try:

@@ -70,6 +70,12 @@ def main():
 		else:
 			handleNewEntry(input_date)
 
+	elif arg1 == "random":
+		sql = db_helper.connect()
+		entry_date, entry_text = db_helper.getRandomEntryFromDb(sql)
+		print(entry_date)
+		print(entry_text)
+
 	# TODO support viewing too
 
 	else:
