@@ -3,6 +3,8 @@ Scripts for writing journal entries locally
 
 Run journal_helper.py for instructions
 
+To activate virtual environment, run `. venv/bin/activate`
+
 ## Import
 Imports txt entries into a sqlite db. Txt files should be formatting like the following:
 
