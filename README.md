@@ -3,6 +3,13 @@ Scripts for writing journal entries locally
 
 Run journal_helper.py for instructions
 
+## TODOs
+- Add backend functionality to convert from SQl to txt (and tests)
+- Front end functionality:
+  - Browse entries by filters (eg. year, month, date)
+  - Insert new entry (autodetect next missing date and whether you're all caught up)
+  - Get random entry by filters (eg. year, month, date)
+
 
 ## Getting Started
 Make sure you have pip3 for python 3 installed. 
