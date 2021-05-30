@@ -11,7 +11,8 @@
 </div>
 
 <div>
-    <h1>Browse</h1>
+    <!-- TODO add a selector for the years -->
+    <h1 id="browse_title">Browse</h1>
 
     <div class="browse_container">
 
@@ -21,3 +22,23 @@
 <div>
     <h1>Random</h1>
 </div>
+
+
+
+{% block script %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        // TODO load in automatically without needing a click
+        $("#browse_title").click(function() {
+            console.log("click");
+            $.ajax({
+                url: "/entry/list/2020",
+                success: function(result) {
+                    console.log(result);
+                }
+            });
+        });
+    });
+</script>
+{% endblock %}

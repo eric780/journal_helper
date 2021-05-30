@@ -4,6 +4,8 @@ Scripts for writing journal entries locally
 Run journal_helper.py for instructions
 
 ## TODOs
+- Support browsing entries by year and month and date
+- Display entries on front end
 - Add backend functionality to convert from SQl to txt (and tests)
 - Front end functionality:
   - Browse entries by filters (eg. year, month, date)

@@ -38,6 +38,9 @@ def importTextToSql(years):
 
 	sql.close()
 
+def getEntriesForYear(year: int):
+	return
+
 def main():
 	if len(sys.argv) < 2:
 		printOptions()
@@ -69,12 +72,24 @@ def main():
 			print("Date is not a valid date")
 		else:
 			handleNewEntry(input_date)
+		sql.close()
 
 	elif arg1 == "random":
 		sql = db_helper.connect()
 		entry_date, entry_text = db_helper.getRandomEntryFromDb(sql)
 		print(entry_date)
 		print(entry_text)
+		sql.close()
+
+	elif arg1 == "year":
+		if len(sys.argv) < 3:
+			print("For year, please include a year")
+			return
+
+		year = sys.argv[2]
+		sql = db_helper.connect()
+		entries = db_helper.getEntriesForYear(sql, year) # list of tuples
+		sql.close()
 
 	# TODO support viewing too
 
@@ -88,6 +103,8 @@ def handleNewEntry(date: str):
 def printOptions():
 	print("Options:")
 	print("import - Import all text files into sqlite (erases previous data)")
+	print("random - Prints a random entry from all entries")
+	print("year <year: int> - Prints all entries for a given year")
 
 if __name__ == "__main__":
  	main()

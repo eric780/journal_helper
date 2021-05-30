@@ -58,6 +58,13 @@ def getEntryFromDb(sql, date: str):
     else:
         return entries[0]
 
+def getEntriesForYear(sql, year: int):
+    sql_query = "SELECT * FROM {table_name} WHERE date LIKE '{year}-%'".format(table_name=JOURNAL_TABLE_NAME, year=year)
+    cursor = sql.cursor()
+    cursor.execute(sql_query)
+    res = cursor.fetchall()
+    return res
+
 def getRandomEntryFromDb(sql):
     cursor = sql.cursor()
     cursor.execute(SQL_GET_RANDOM_ENTRY)
