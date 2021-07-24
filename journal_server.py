@@ -16,3 +16,12 @@ def getEntriesForYear(year: int):
 
     sql.close()
     return jsonify(entries=entries)
+
+@app.route('/entry/random')
+def getRandomEntry():
+    sql = db_helper.connect()
+
+    random_entry = db_helper.getRandomEntryFromDb(sql)
+
+    sql.close()
+    return jsonify(entry=random_entry)

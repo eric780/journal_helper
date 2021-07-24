@@ -20,7 +20,10 @@
 </div>
 
 <div>
-    <h1>Random</h1>
+    <h1 id="random_title">Random</h1>
+
+    <p id="random_date"></p>
+    <p id="random_entry_text"></p>
 </div>
 
 
@@ -38,6 +41,17 @@
                     console.log(result);
                 }
             });
+        });
+
+        $("#random_title").click(function() {
+            $.ajax({
+                url: "/entry/random",
+                success: function(result) {
+                    entry_array = result["entry"]
+                    $("#random_date").text(entry_array[0])
+                    $("#random_entry_text").text(entry_array[1])
+                } 
+            })
         });
     });
 </script>
