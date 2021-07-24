@@ -1,0 +1,9 @@
+
+.browse_container {
+    overflow-y:auto
+}
+
+/* Preserves whitespace from journal entries */
+p {
+    white-space: pre-wrap;
+}
