@@ -3,14 +3,25 @@ Scripts for writing journal entries locally
 
 Run journal_helper.py for instructions
 
+## PRIMARY USER JOURNEYS
+- View random entry
+  - Browse nearby entries
+- Browse specific entries
+  - Filter by keywords
+Housekeeping
+  - View missing/short entries
+  - Check for duplicate entries
+- Analysis/Fun
+  - Generate word clouds
+  - Training bag of words
+
+## NOT GOOD FOR
+- Adding new entries (just write directly to text files)
+
 ## TODOs
-- Support browsing entries by year and month and date
-- Display entries on front end
-- Add backend functionality to convert from SQl to txt (and tests)
-- Front end functionality:
-  - Browse entries by filters (eg. year, month, date)
-  - Insert new entry (autodetect next missing date and whether you're all caught up)
-  - Get random entry by filters (eg. year, month, date)
+- Clean up frontend UI
+- Browse nearby entries when showing an entry
+- Add functionality to sanity check entries (eg. scan for duplicates, already in journal_helper)
 
 
 ## Getting Started
