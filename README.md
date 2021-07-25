@@ -28,7 +28,8 @@ Housekeeping
 Make sure you have pip3 for python 3 installed. 
 To activate virtual environment, run `. venv/bin/activate`
 Run `pip install -r requirements.txt` to install requirements.
-`export FLASK_APP=journal_server.py` then `python3 -m flask run` to start the server
+To start the server with autoreload enabled:
+`FLASK_APP=journal_server.py FLASK_ENV=development python3 -m flask run`
 
 ## Import
 Imports txt entries into a sqlite db. Txt files should be formatting like the following:
