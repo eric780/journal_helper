@@ -1,29 +1,30 @@
 <head>
     <title>Journal Helper</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/index.css') }}" />
+    <!-- Make viewport responsive for mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Load bootstrap from CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Load my custom CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/index.css') }}" />
 </head>
 
-<h1>Welcome to your Journal!</h1>
-
-<div>
-    <!-- TODO add a selector for the years -->
-    <h1 id="browse_title">Browse</h1>
+<div class="container">
+    <h1>Welcome to your Journal!</h1>
+    <div class="page-header">
+        <h1 id="browse_title">Browse</h1>
+    </div>
 
     <div class="browse_container">
+    </div>
 
+    <div class="page-header">
+        <h1 id="random_title">Random</h1>
+    </div>
+    <div>
+        <p id="random_date"></p>
+        <p id="random_entry_text"></p>
     </div>
 </div>
-
-<div>
-    <h1 id="random_title">Random</h1>
-
-    <p id="random_date"></p>
-    <p id="random_entry_text"></p>
-</div>
-
-
 
 {% block script %}
 <!-- Load js for bootstrap -->
