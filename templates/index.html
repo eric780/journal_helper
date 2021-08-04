@@ -18,10 +18,11 @@
     </div>
 
     <div class="page-header">
-        <h1 id="random_title">Random</h1>
+        <h1>Random</h1>
+        <button type="button" id="btn-random-entry" class="btn btn-lg btn-primary">Randomize!</button>
     </div>
     <div>
-        <p id="random_date"></p>
+        <h2 id="random_date"></h2>
         <p id="random_entry_text"></p>
     </div>
 </div>
@@ -44,7 +45,7 @@
             });
         });
 
-        $("#random_title").click(function() {
+        $("#btn-random-entry").click(function() {
             $.ajax({
                 url: "/entry/random",
                 success: function(result) {
