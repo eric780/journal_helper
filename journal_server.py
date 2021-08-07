@@ -25,3 +25,8 @@ def getRandomEntry():
 
     sql.close()
     return jsonify(entry=random_entry)
+
+@app.route('/entry/search/<query>')
+def getSearchResults(query: str):
+    # TODO
+    return jsonify(results=["test"])

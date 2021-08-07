@@ -12,9 +12,11 @@
     <h1>Welcome to your Journal!</h1>
     <div class="page-header">
         <h1 id="browse_title">Browse</h1>
-    </div>
+        <form id="form_search">
+            <input type="text" placeholder="Search...">
+            <button type="submit">Submit</button>
+        </form>
 
-    <div class="browse_container">
     </div>
 
     <div class="page-header">
@@ -54,6 +56,20 @@
                     $("#random_entry_text").text(entry_array[1])
                 } 
             })
+        });
+
+        $("#form_search").submit(function(event) {
+            // TODO validate
+            const search = $("#form_search input").val();
+            console.log("searching: " + search);
+            $.ajax({
+                url:"/entry/search/" + search,
+                success: function(result) {
+                    console.log(result);
+                }
+            });
+
+            event.preventDefault();
         });
     });
 </script>
