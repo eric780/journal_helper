@@ -71,6 +71,14 @@ def getRandomEntryFromDb(sql):
     entries = cursor.fetchall()
     return entries[0]
 
+def getEntriesForQuery(sql, query: str):
+    sql_query = "SELECT * FROM {table_name} WHERE entry LIKE '%{query}%'".format(table_name=JOURNAL_TABLE_NAME, query=query)
+    print(sql_query)
+    cursor = sql.cursor()
+    cursor.execute(sql_query)
+    res = cursor.fetchall()
+    return res
+
 def clearAllSqlEntries():
 	try:
 		sql = sqlite3.connect(JOURNAL_DB_FILENAME)

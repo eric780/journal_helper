@@ -28,5 +28,6 @@ def getRandomEntry():
 
 @app.route('/entry/search/<query>')
 def getSearchResults(query: str):
-    # TODO
-    return jsonify(results=["test"])
+    sql = db_helper.connect()
+    results = db_helper.getEntriesForQuery(sql, query)
+    return jsonify(entries=results)
